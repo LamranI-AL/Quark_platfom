@@ -8,33 +8,39 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Image,
-  Input,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import "./Css/Buuton2.css";
-import { MdOutlineTravelExplore } from "react-icons/md";
 
 const TeamDrawer = ({ descriptionIndiv, name }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
     <>
-      <button
-        // m={2}
-        class="button"
+      <Button
+        size={"sm"}
+        colorScheme="teal"
+        variant="ghost"
         ref={btnRef}
-        size="md"
         onClick={onOpen}
       >
+        <span>Explore</span>
+        <svg width="10px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </Button>
+
+      {/* <button class="button" ref={btnRef} size="md" onClick={onOpen}>
         <MdOutlineTravelExplore className="icon" />
         Explore
-      </button>
+      </button> */}
 
       <Drawer
         isOpen={isOpen}
-        placement="left"
+        size={"lg"}
+        placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
       >

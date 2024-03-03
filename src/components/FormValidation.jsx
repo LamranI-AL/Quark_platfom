@@ -14,10 +14,10 @@ import {
   AlertDescription,
   List,
   ListItem,
-  Center,
   Box,
   Tooltip,
 } from "@chakra-ui/react";
+import Axios from "axios";
 const FormValidation = () => {
   useEffect(() => {
     nameRef.current.focus();
@@ -79,10 +79,21 @@ const FormValidation = () => {
     getData();
     if (Object.keys(errors).length === 0) {
       setIsFormValideFinal(true);
-    }
-    if (isValidFormFinal === true) {
+      creatUser();
       resetForm();
     }
+    // if (isValidFormFinal === true) {
+    // }
+  };
+  const creatUser = () => {
+    Axios.post("http://localhost:3001/CreatMessage", {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      age: ageRef.current.value,
+      message: messageRef.current.value,
+    }).then((res) => {
+      console.log(res.data);
+    });
   };
 
   const resetForm = () => {
@@ -124,7 +135,7 @@ const FormValidation = () => {
         <List>
           {Object.keys(errors).length > 0
             ? Object.entries(errors).map((eror, index) => (
-                <Alert status="error">
+                <Alert key={index} status="error">
                   <AlertIcon />
                   <ListItem key={index}>{eror}</ListItem>
                 </Alert>
@@ -149,27 +160,29 @@ const FormValidation = () => {
             Message submitted!
           </AlertTitle>
           <AlertDescription maxWidth="sm">
-            Thanks for submitting your Message. Our team will get back to you
-            soon.
+            Thanks for submitting your Message. checke comment section to see
+            it.
           </AlertDescription>
         </Alert>
       ) : (
         ""
       )}
       <FormControl m={5}>
-        <Box textAlign="center" mt="8">
-          <Heading>Contactez-nous</Heading>
+        <Box p={4} boxShadow={"xl"} borderRadius={20} textAlign="center" mt="8">
+          <Heading as={"h4"} mb={4}>
+            Ajouter un commentaire
+          </Heading>
 
-          <FormLabel>Name</FormLabel>
+          <FormLabel ml={3}>Name</FormLabel>
           <Input type="name" id="name" ref={nameRef} />
           {displayError("name")}
-          <FormLabel>Email address</FormLabel>
+          <FormLabel ml={3}>Email address</FormLabel>
           <Input type="email" id="email" ref={emailRef} />
           {displayError("email")}
-          <FormLabel>Age</FormLabel>
+          <FormLabel ml={3}>Age</FormLabel>
           <Input type="text" id="age" ref={ageRef} />
           {displayError("age")}
-          <FormLabel>Message to Quark</FormLabel>
+          <FormLabel ml={3}>Message to Quark</FormLabel>
           <Textarea type="text" id="message" ref={messageRef} />
           {displayError("message")}
           <div>
@@ -187,7 +200,7 @@ const FormValidation = () => {
               onClick={handelSubmit}
               type="submit"
             >
-              envoyer
+              Ajouter
             </Button>
           </Tooltip>
         </Box>

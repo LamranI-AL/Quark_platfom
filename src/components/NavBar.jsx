@@ -11,7 +11,7 @@ import {
 import logo from "../assets/V.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { Link } from "react-router-dom";
-import { EditIcon, HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
+// import { EditIcon, HamburgerIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import { SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
 import { TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
 import { SiCloudfoundry, SiGmail } from "react-icons/si";
@@ -49,7 +49,10 @@ const NavBar = () => {
             </button>
           </Box>
           <Box m={1}>
-            <a href="https://www.linkedin.com/company/93078211/admin/feed/posts/">
+            <a
+              href="https://www.linkedin.com/company/quark-ensabm"
+              target="_blank"
+            >
               <button class="btn">
                 <TiSocialLinkedin color="purple" />
               </button>
@@ -57,7 +60,7 @@ const NavBar = () => {
           </Box>
 
           <Box m={1}>
-            <a href="https://www.instagram.com/quark.ensabm/">
+            <a href="https://www.instagram.com/quark.ensabm/" target="_blank">
               <button class="btn">
                 <TiSocialInstagram color="purple" />
               </button>
@@ -76,27 +79,27 @@ const NavBar = () => {
           <Box pl={5} m={1}>
             <TbHomeInfinity />
           </Box>
-          <Link to={"/"}>Home</Link>
+          <Link to={"/"}>Accueil</Link>
         </Flex>
         <Flex justifyContent={"space-around"} pl={5} m={1}>
           <Box mt={1} mr={1}>
             <TbListDetails />
           </Box>
-          <Link to={"/details"}>Details</Link>
+          <Link to={"/details"}>Détails</Link>
         </Flex>
 
         <Flex justifyContent={"space-around"} pl={5} m={1}>
           <Box mt={1} mr={1}>
             <MdOutlineEventNote />
           </Box>
-          <Link to={"/Events"}>Evenements</Link>
+          <Link to={"/Events"}>Événements</Link>
         </Flex>
 
         <Flex pl={5} m={1}>
           <Box mt={1} mr={1}>
             <MdOutlineContactPhone />
           </Box>
-          <Link to={"/contact"}>Contact us</Link>
+          <Link to={"/contact"}>Contactez-nous</Link>
         </Flex>
         <Spacer />
         <Box m={1}>

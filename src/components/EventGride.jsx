@@ -1,35 +1,35 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
-import React from "react";
-import PopoverCm from "./Popover";
-import { Link } from "react-router-dom";
-import "./Css/Card.css";
+import { Card } from "antd";
+import ModelTasck from "./ModelTasck";
+import { Box, Image } from "@chakra-ui/react";
 
 const EventGride = ({ imageUrl, name, description }) => {
+  const { Meta } = Card;
   return (
     <>
-      <div class="card">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="card-inner">
-          <Box>
-            <Image boxSize={220} borderRadius={10} src={imageUrl} />
-          </Box>
-          <Box>
-            <Heading size="md"> {name}</Heading>
-          </Box>
-        </div>
-      </div>
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={
+          <a
+            href="https://www.linkedin.com/company/quark-ensabm"
+            target="_blank"
+          >
+            <Image height={270} w={300} alt={name} src={imageUrl} />
+          </a>
+        }
+      >
+        <Box mb={5}>
+          <a href="https://www.instagram.com/quark.ensabm/" target="_blank">
+            <Meta title={name} description="www.instagram.com/quark.ensabm" />
+          </a>
+        </Box>
+
+        <ModelTasck
+          title={name}
+          buttonName={"détaille"}
+          description={description}
+        />
+      </Card>
     </>
   );
 };

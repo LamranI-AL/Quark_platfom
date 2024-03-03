@@ -1,13 +1,10 @@
-import React from "react";
 import {
   Box,
   Heading,
   Text,
   SimpleGrid,
   Image,
-  Flex,
   Button,
-  Center,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -19,7 +16,7 @@ const teamDescriptions = [
   {
     id: 1,
     imgUrl:
-      "https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?w=900&t=st=1708034791~exp=1708035391~hmac=79f8809ccd3542e95713f4c0c88ae958f328ae8a25c786cc4d6c93f32906ac5a",
+      "https://as1.ftcdn.net/v2/jpg/04/08/34/72/1000_F_408347240_XoD3pgXWa44LJh8wL2K9nII6Gbdn0nPN.jpg",
     title: "Équipe Technique",
     description:
       "Une équipe de plus de 70 personnes qui vise a former les adhérents du club dans plusieurs domaines qui ont relation avec la technlogie et l'entreprenariat",
@@ -41,7 +38,7 @@ const teamDescriptions = [
   },
 ];
 
-// Composant pour afficher la description d'une équipe avec animation
+// Composant pour afficher la description d'une équipe
 const TeamDescription = ({ title, description, imgUrl }) => {
   return (
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -65,7 +62,7 @@ const TeamDescription = ({ title, description, imgUrl }) => {
   );
 };
 
-// Composant Section pour afficher les descriptions des équipes avec animation
+// Composant Section pour afficher les descriptions des équipes
 const TeamDescriptionSection = () => {
   return (
     <motion.div
@@ -99,9 +96,6 @@ const TeamDescriptionSection = () => {
             <Button color={"white"} className="button-86" role="button">
               Learn More
             </Button>
-            {/* <button class="button1">
-              Explore
-            </button> */}
           </Link>
         </Box>
       </Box>

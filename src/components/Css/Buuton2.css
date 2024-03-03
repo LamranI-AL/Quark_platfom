@@ -1,69 +1,57 @@
-.button {
+/* .cta {
   position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  background-color: rgb(0, 107, 179);
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
+  padding: 3px 15px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
   cursor: pointer;
-  color: #ffff;
-  gap: 7px;
-  font-weight: bold;
-  border: 3px solid #ffffff4d;
-  outline: none;
-  overflow: hidden;
-  font-size: 15px;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  border-color: #fff9;
-}
-
-.button:hover .icon {
-  transform: translate(4px);
-}
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
+.cta:before {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
   top: 0;
-  left: -100px;
-  opacity: 0.6;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 25px;
+  height: 27px;
+  transition: all 0.3s ease;
 }
 
-@keyframes shine {
-  0% {
-    left: -100px;
-  }
-
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #234567;
 }
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+} */

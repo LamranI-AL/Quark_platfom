@@ -7,7 +7,7 @@ const MessageShema = new mongoose.Schema({
     type: String,
   },
   age: {
-    type: Number,
+    type: String,
   },
   message: {
     type: String,

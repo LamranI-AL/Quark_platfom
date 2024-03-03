@@ -8,52 +8,34 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
-//les donnes
-const MessagesMemberData = [
-  {
-    id: 1,
-    MemberName: "othmane lamrani alaoui",
-    Message:
-      "Quark is not just a name , it's a life style🏛️, a way of thinking 💭.",
-    BureauPeriode: "2023-2024",
-  },
-  {
-    id: 2,
-    MemberName: "youssef kerrom",
-    Message: "Équipe Technique",
-    BureauPeriode: "2023-2024",
-  },
-  {
-    id: 2,
-    MemberName: "merrouk aymane ",
-    Message: "Équipe Technique",
-    BureauPeriode: "2023-2024",
-  },
-];
-const MembesrMessages = () => {
-  return MessagesMemberData.map((member) => {
+const MembesrMessages = ({ users }) => {
+  return users.map((user) => {
     return (
-      <Card>
+      <Card key={user.id}>
         <CardHeader>
-          <Heading size="md"> {member.MemberName}</Heading>
+          <Heading size="md"> {user.name}</Heading>
         </CardHeader>
         <CardBody>
-          <Text>{member.Message}</Text>
+          <Text>{user.message}</Text>
         </CardBody>
         <CardFooter>
-          <Button>{member.BureauPeriode}</Button>
+          <Button size={"sm"}>{user.email}</Button>
         </CardFooter>
       </Card>
     );
   });
 };
 
-const Message = () => {
+const Message = ({ users }) => {
   return (
-    <SimpleGrid p={5} columns={{ base: 2, lg: 6 }} spacing={3}>
-      <MembesrMessages />
-    </SimpleGrid>
+    <>
+      <Heading textAlign="center" as="h2" size="xl" mb="8">
+        Comment section
+      </Heading>
+      <SimpleGrid p={5} columns={{ base: 1, lg: 1 }} spacing={3}>
+        <MembesrMessages users={users} />
+      </SimpleGrid>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ import ModelTasck from "./ModelTasck";
 
 // Composant de la section Hero
 const HeroSection = () => {
-  const buttonName = " About Quark";
+  const buttonName = "À propos";
   const title = "Explorez le Club Quark :";
   const description =
     "En tant qu'ingénieurs en herbe, notre passion pour la science et la technologie est inébranlable. Nous menons des projets de recherche interdisciplinaires, exploitant notre expertise en génie pour résoudre des problèmes complexes et repousser les limitesde  la connaissance. Notre équipe est composée de chercheursdévoués,  prêts à relever les défis scientifiques les plusardus. Nous organisons des colloques, des ateliers et desdiscussions pour partager nos découvertes et inspirer laprochaine génération de scientifiques.";

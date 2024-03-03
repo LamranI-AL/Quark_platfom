@@ -7,7 +7,6 @@ import ContactUs from "./pages/ContactUs";
 import PageNotFounded from "./pages/PageNotFounded";
 import { ChakraProvider } from "@chakra-ui/react";
 import Events from "./pages/Events";
-
 function App() {
   return (
     <ChakraProvider>
