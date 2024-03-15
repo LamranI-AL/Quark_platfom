@@ -32,11 +32,6 @@ const TeamDrawer = ({ descriptionIndiv, name }) => {
         </svg>
       </Button>
 
-      {/* <button class="button" ref={btnRef} size="md" onClick={onOpen}>
-        <MdOutlineTravelExplore className="icon" />
-        Explore
-      </button> */}
-
       <Drawer
         isOpen={isOpen}
         size={"lg"}

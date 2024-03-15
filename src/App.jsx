@@ -7,6 +7,11 @@ import ContactUs from "./pages/ContactUs";
 import PageNotFounded from "./pages/PageNotFounded";
 import { ChakraProvider } from "@chakra-ui/react";
 import Events from "./pages/Events";
+import "./index.css";
+
+// import "tailwindcss";
+// import "tailwindcss/tailwind.css";
+
 function App() {
   return (
     <ChakraProvider>

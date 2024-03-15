@@ -196,7 +196,9 @@ const FormValidation = () => {
             <Button
               m={10}
               disabled={!isValidFormFinal}
-              colorScheme="teal"
+              // colorScheme="#5F374B"
+              bgColor="#5F374B"
+              color="white"
               onClick={handelSubmit}
               type="submit"
             >

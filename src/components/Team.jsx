@@ -1,19 +1,11 @@
-import React from "react";
 import {
   Box,
   Heading,
   SimpleGrid,
   Image,
   Text,
-  Flex,
-  Button,
   Divider,
 } from "@chakra-ui/react";
-import {
-  PiInstagramLogoDuotone,
-  PiLinkedinLogoDuotone,
-  PiFacebookLogoDuotone,
-} from "react-icons/pi";
 import TeamDrawer from "./TeamDrawer";
 import meImage from "../assets/bureau/me.jpeg";
 import mehdiImage from "../assets/bureau/mehdiImage.jpg";
@@ -78,7 +70,7 @@ const teamMembers = [
     fb: "",
     insta: "https://www.instagram.com/abdelhakim_echahbi",
     linkedin: "",
-    position: "res. Technique",
+    position: "Resp. Technique",
     image: abdlHakimImage,
   },
   {
@@ -112,7 +104,7 @@ const teamMembers = [
     fb: "",
     insta: "",
     linkedin: "",
-    position: "Resp. de créativité",
+    position: "V-Re de créativité",
     image: mehdiImage,
   },
 ];
@@ -120,23 +112,52 @@ const teamMembers = [
 // Composant Card pour afficher un membre de l'équipe
 const TeamMemberCard = ({ member }) => {
   return (
+    // <>
+    //   <div class="ui card">
+    //     <div class="ui  right slide masked reveal image ">
+    //       <img
+    //         src={member.image}
+    //         class="visible content"
+    //         // style={{ height: "150px" }}
+    //       />
+    //       <img
+    //         src={member.image}
+    //         class="hidden content"
+    //         // style={{ height: "150px" }}
+    //       />
+    //     </div>
+    //     <div class="content">
+    //       <a class="header">{member.name}</a>
+    //       <div class="meta">
+    //         <span class="date">{member.position}</span>
+    //       </div>
+    //     </div>
+    //     <div class="extra content">
+    //       <a>
+    //         <i class="users icon"></i>
+    //         <TeamDrawer
+    //           name={member.name}
+    //           descriptionIndiv={member.descriptionIndiv}
+    //         />
+    //       </a>
+    //     </div>
+    //   </div>
+    // </>
     <Box
       h={200}
       maxW="sm"
       borderWidth="1px"
       borderRadius="lg"
       boxShadow={"md"}
-      borderColor={"gray.400"}
+      borderTop={"4px solid"}
+      borderColor={"#EEE4B1"}
+      _hover={{ bg: "#EEE4B1", transform: "scale(1.02)" }}
       overflow="hidden"
     >
       <Image
-        ml={10}
-        mt={2}
-        h={70}
-        w={70}
-        borderRadius={50}
-        border="4px solid "
-        borderColor={"gray.600"}
+        position="revert-layer"
+        p={1}
+        borderRadius={10}
         src={member.image}
         alt={member.name}
       />
@@ -156,29 +177,6 @@ const TeamMemberCard = ({ member }) => {
           {member.name}
         </Box>
         <Divider py={5} />
-        {/* <Flex gridColumn={4} mt={7}>
-          <Box width={10}>
-            <a href={member.insta}>
-              <Button bg={"transparent"} target="_blank">
-                <PiInstagramLogoDuotone />
-              </Button>
-            </a>
-          </Box>
-          <Box width={10}>
-            <a href={member.fb} target="_blank">
-              <Button bg={"transparent"}>
-                <PiFacebookLogoDuotone />
-              </Button>
-            </a>
-          </Box>
-          <Box width={10}>
-            <a href={member.linkedin} target="_blank">
-              <Button bg={"transparent"}>
-                <PiLinkedinLogoDuotone />
-              </Button>
-            </a>
-          </Box>
-        </Flex> */}
       </Box>
     </Box>
   );
@@ -190,10 +188,10 @@ const TeamSection = () => {
     <Box
       m={1}
       mt={20}
-      border={"1px solid"}
+      // borderTop={"4px solid"}
       borderRadius={8}
       p={6}
-      borderColor={"black"}
+      // borderColor={"#EEE4B1"}
     >
       <Box m={2}>
         <Heading textAlign="center" as="h2" size="xl" mb="8">

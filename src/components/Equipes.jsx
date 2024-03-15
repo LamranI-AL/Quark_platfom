@@ -8,30 +8,28 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import imgTechnique from "../assets/imges/techniqueImage2.png";
+import imgRecherch from "../assets/imges/recherchImage.png";
+import imgCreativiter from "../assets/imges/Creativity.png";
 import "./Css/buuton.css";
-// import "./Css/buuton3.css";
-
-// Données des descriptions d'équipe
 const teamDescriptions = [
   {
     id: 1,
-    imgUrl:
-      "https://as1.ftcdn.net/v2/jpg/04/08/34/72/1000_F_408347240_XoD3pgXWa44LJh8wL2K9nII6Gbdn0nPN.jpg",
+    imgUrl: imgTechnique,
     title: "Équipe Technique",
     description:
       "Une équipe de plus de 70 personnes qui vise a former les adhérents du club dans plusieurs domaines qui ont relation avec la technlogie et l'entreprenariat",
   },
   {
     id: 2,
-    imgUrl:
-      "https://img.freepik.com/free-vector/flat-creativity-concept-illustration_52683-64279.jpg?w=740&t=st=1708034654~exp=1708035254~hmac=2f8915747f8a666e2b9384969aa5e3bfed7021848403bbb4f18ecbd57df2f674",
+    imgUrl: imgCreativiter,
     title: "Équipe de Créativité",
     description:
       "Stimuler l'innovation et la créativité sous toutes ses formes. Composée d'étudiants passionnés et ingénieux, notre équipe travaille en étroite collaboration pour concevoir et donner vie à des idées novatrices.",
   },
   {
     id: 3,
-    imgUrl: "https://www.bium.ch/wp-content/uploads/2018/12/outils-biblio.jpg",
+    imgUrl: imgRecherch,
     title: "Équipe de Recherche Scientifique",
     description:
       "L'Équipe de Recherche Scientifique du Club Quark incarne l'esprit de découverte et d'exploration qui anime notre institution d'ingénierie.",
@@ -48,6 +46,7 @@ const TeamDescription = ({ title, description, imgUrl }) => {
         borderRadius="lg"
         m={5}
         borderTop="5px solid"
+        borderColor={"#5F374B"}
       >
         <Box>
           <Image borderRadius={20} src={imgUrl} boxSize={300} />
@@ -75,7 +74,7 @@ const TeamDescriptionSection = () => {
         p={5}
         borderTop="5px solid"
         borderRadius={5}
-        borderColor={"purple"}
+        borderColor="#5F374B"
       >
         <Heading as="h2" size="xl" textAlign="center">
           Nos Équipes

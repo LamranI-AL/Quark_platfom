@@ -23,6 +23,7 @@ import {
 import "../components/Css/buuton.css";
 import { redirect } from "react-router-dom";
 import { Empty } from "antd";
+import contact from "../assets/imges/Contact.png";
 
 const ContactUs = () => {
   const [users, setUsers] = useState([]);
@@ -31,13 +32,7 @@ const ContactUs = () => {
       setUsers(res.data);
     });
   }, [users]);
-  console.log(users);
-  const imgUrl =
-    "https://img.freepik.com/vecteurs-libre/illustration-vectorielle-rencontre-ligne-concept-abstrait-conference-telephonique-rejoindre-groupe-meetup-service-ligne-appel-video-communication-distance-reunion-informelle-metaphore-abstraite-du-reseautage-membres_335657-2920.jpg?w=740&t=st=1708147545~exp=1708148145~hmac=2361d7938507cfa1be0e032a0e6cb874261043021c56ca275c6160617d46eab8";
-  const imgUrl1 =
-    "https://img.freepik.com/vecteurs-libre/support-client-illustration-design-plat_23-2148887720.jpg?w=740&t=st=1708147677~exp=1708148277~hmac=fc5e69b75efa5d2dd2a2d05b52d7856676a8866d5b60f140f4ec4c327bb14fd3";
-
-  // const creatUser = () => {};
+  // console.log(users);
   const { isSignedIn, user, isLoaded } = useUser();
 
   return (
@@ -59,7 +54,7 @@ const ContactUs = () => {
               <Box ml={6} m={1}>
                 <UserButton />
               </Box>
-              <Text mr={4} mt={3} as="b" fontSize="small">
+              <Text mr={4} mt={3} fontSize="small">
                 be member
               </Text>
             </Flex>
@@ -87,10 +82,6 @@ const ContactUs = () => {
             </Text>
           </Flex>
         </motion.div>
-
-        {/* <Box p={20}>
-          
-        </Box> */}
       </SignedOut>
       <SignedIn>
         <Flex>
@@ -107,7 +98,7 @@ const ContactUs = () => {
               </Button>
             </Box>
 
-            <Flex>
+            {/* <Flex>
               <Box
                 ml={6}
                 m={1}
@@ -122,7 +113,7 @@ const ContactUs = () => {
                   {user.fullName}
                 </Text>
               )}
-            </Flex>
+            </Flex> */}
           </Flex>
         </Flex>
 
@@ -142,12 +133,12 @@ const ContactUs = () => {
                 }}
               >
                 <Image
-                  src={imgUrl}
+                  src={contact}
                   alt="Image"
-                  w={{ base: "50% ", md: "90%" }}
-                  h={{ base: "50% ", md: "90%" }}
+                  w={{ base: "30% ", md: "80%" }}
+                  h={{ base: "30% ", md: "80%" }}
                   p={10}
-                  m={5}
+                  m={10}
                   objectFit="cover"
                 />
               </motion.div>

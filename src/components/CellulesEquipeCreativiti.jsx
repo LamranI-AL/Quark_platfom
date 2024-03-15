@@ -1,13 +1,13 @@
 import { Box, Heading, Text, SimpleGrid, Image, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ModelTasck from "./ModelTasck";
+import imgCreativiter from "../assets/imges/Creativity.png";
 
 // Données des descriptions d'équipe
 const teamDescriptions = [
   {
     id: 1,
-    imgUrl:
-      "https://img.freepik.com/vecteurs-libre/illustration-concept-creativite-plat_52683-64279.jpg?w=740&t=st=1708149503~exp=1708150103~hmac=d7862d5dffce565ea06fb4c2efebc5a804196a913266556faa3ea83671d10040",
+    imgUrl: imgCreativiter,
     title: "Équipe de Créativité - L'Art de Réinventer :",
     description:
       "Notre Équipe de Créativité au sein du Club Quark est le fer de lance de l'innovation à l'École Nationale des Sciences Appliquées de Béni Mellal. Nous sommes des esprits passionnés qui croient en la puissance de la créativité pour transformer le monde qui nous entoure. Nous croyons que la diversité est la clé de l'innovation, c'est pourquoi notre équipe est composée d'étudiants aux horizons variés. Nous sommes les artisans de l'originalité, les gardiens de l'audace et les créateurs de nouvelles voies !",
@@ -23,7 +23,7 @@ const EquipeCreaCelluleDescription = ({ title, description, imgUrl }) => {
         borderRadius="lg"
         m={5}
         borderTop="5px solid"
-        borderColor={"purple"}
+        borderColor="#430A5D"
       >
         <Box>
           <Image borderRadius={20} src={imgUrl} boxSize={300} />

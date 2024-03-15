@@ -10,21 +10,21 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ModelTasck from "./ModelTasck";
+import imgCreationProjet from "../assets/imges/cellulCreationProj.png";
+import imgRecherchScientifique from "../assets/imges/cellulScience.png";
 
 // Données des descriptions d'équipe
 const teamDescriptions = [
   {
     id: 1,
-    imgUrl:
-      "https://image.freepik.com/free-vector/illustration-female-scientists_23-2148393338.jpg",
+    imgUrl: imgRecherchScientifique,
     title: "Cellule de Recherche Scientifique - Explorer l'Inconnu :",
     description:
       "En tant qu'ingénieurs en herbe, notre passion pour la science et la technologie est inébranlable. Nous menons des projets de recherche interdisciplinaires, exploitant notre expertise en génie pour résoudre des problèmes complexes et repousser les limites de la connaissance. Notre équipe est composée de chercheurs dévoués, prêts à relever les défis scientifiques les plus ardus. Nous organisons des colloques, des ateliers et des discussions pour partager nos découvertes et inspirer la prochaine génération de scientifiques.",
   },
   {
     id: 2,
-    imgUrl:
-      "https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?w=826&t=st=1708034104~exp=1708034704~hmac=f51146ecb6b31459fc7f23611d556fe76828b30322270284003749890c200cb6",
+    imgUrl: imgCreationProjet,
     title: "Cellule de Création de Projet - Donnez Vie à Vos Idées :",
     description:
       "comme étant l'un des axes les plus important au maroc et suite au nombreux blocages trouvés au terrain surtout en ce qui concerne l'accompagnement et l'orientation. notre club a pensé a son tour de donner l'opportunité au membre du club pour partager leurs expériences a travers des , les encourager et les fomer dans plusieurs sujets considérés trés important dans le monde de l'entreprenariat par des workshops et des ateliers animé par des formateurs et des experts.",
@@ -40,7 +40,7 @@ const EquipeCelluleDescription = ({ title, description, imgUrl }) => {
         borderRadius="lg"
         m={5}
         borderTop="5px solid"
-        borderColor={"purple"}
+        borderColor="#430A5D"
       >
         <Box>
           <Image borderRadius={20} src={imgUrl} boxSize={300} />
