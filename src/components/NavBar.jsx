@@ -212,14 +212,14 @@ const NavBar = () => {
         </SignedOut>
         <SignedIn>
           <Box>
-            <Box border="1px solid" borderRadius="50px" mx={4}>
+            <Box mx={4}>
               <UserButton />
             </Box>
           </Box>
         </SignedIn>
-        <Box mt={2}>
+        {/* <Box mt={2}>
           <ColorModeSwitch />
-        </Box>
+        </Box> */}
       </Flex>
     </div>
   );
