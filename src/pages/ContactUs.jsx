@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Flex,
+  Heading,
   Image,
   SimpleGrid,
   Spacer,
@@ -24,6 +25,7 @@ import "../components/Css/buuton.css";
 import { redirect } from "react-router-dom";
 import { Empty } from "antd";
 import contact from "../assets/imges/Contact.png";
+import Footer from "../components/Footer";
 
 const ContactUs = () => {
   const [users, setUsers] = useState([]);
@@ -86,9 +88,9 @@ const ContactUs = () => {
       <SignedIn>
         <Flex>
           {isSignedIn && (
-            <Text ml={4} as="b" fontSize="x-large">
+            <Heading ml={4} textAlign={"center"} as="b" fontSize="x-large">
               Hello {user.fullName}
-            </Text>
+            </Heading>
           )}
           <Spacer />
           <Flex>
@@ -97,23 +99,6 @@ const ContactUs = () => {
                 <SignOutButton signOutCallback={() => redirect("/contact")} />
               </Button>
             </Box>
-
-            {/* <Flex>
-              <Box
-                ml={6}
-                m={1}
-                border="2px solid"
-                borderRadius={50}
-                borderColor={"purple"}
-              >
-                <UserButton />
-              </Box>
-              {isSignedIn && (
-                <Text mt={3} as="b" fontSize="small">
-                  {user.fullName}
-                </Text>
-              )}
-            </Flex> */}
           </Flex>
         </Flex>
 
@@ -135,8 +120,8 @@ const ContactUs = () => {
                 <Image
                   src={contact}
                   alt="Image"
-                  w={{ base: "30% ", md: "80%" }}
-                  h={{ base: "30% ", md: "80%" }}
+                  w={{ base: "50% ", md: "80%" }}
+                  h={{ base: "50% ", md: "80%" }}
                   p={10}
                   m={10}
                   objectFit="cover"
@@ -151,6 +136,7 @@ const ContactUs = () => {
           {users.length > 0 ? <Message users={users} /> : <Empty />}
         </motion.div>
       </SignedIn>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import bgImage1 from "../assets/IMG-20230126-WA0056.jpg";
+import bgImage1 from "../assets/HeroImage/IMG-20230126-WA0056.jpg";
 import ModelTasck from "./ModelTasck";
 // import Buuton from "./Button/Buuton";
 
@@ -23,9 +23,9 @@ const HeroSection = () => {
         h="100vh"
         position="relative"
         overflow="hidden"
-        // border="4px solid #000"
+        display={{ base: "block", md: "flex" }}
       >
-        <Box pl={10} flex="1">
+        <Box pl={{ base: 0, md: 10 }} flex="1">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -48,18 +48,17 @@ const HeroSection = () => {
         <Box flex="1">
           <Box p="8">
             <Text
-              // fontSize="6xl"
               fontSize={{ base: "3xl", lg: "6xl" }}
               fontWeight="bold"
               mb="4"
             >
               Explorez le Club Quark.
             </Text>
-            <Text fontSize="2xl" mb="8">
+            <Text fontSize={{ base: "lg", lg: "2xl" }} mb="8">
               Club Quark de l'École Nationale des Sciences Appliquées de Béni
               Mellal
             </Text>
-            <Text fontSize="lg" mb={3}>
+            <Text fontSize={{ base: "sm", lg: "lg" }} mb={3}>
               Le berceau de la créativité et de l'innovation étudiante à l’école
               nationale des sciences appliquées de béni mellal
             </Text>

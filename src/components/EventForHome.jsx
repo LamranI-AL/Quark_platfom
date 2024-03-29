@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import EventGride from "./EventGride";
 import { useEffect, useState } from "react";
 import Axios from "axios";
+import "./Css/buuton.css";
 
 function EventsSectionForHome() {
   // Données d'exemple pour les événements avec leurs URL d'images
@@ -59,7 +60,9 @@ function EventsSectionForHome() {
       </SimpleGrid>
       <Box textAlign="center" mb={5}>
         <Link to={"/Events"}>
-          <Button>More Events</Button>
+          <Button className="button-86" color={"white"}>
+            Événements +
+          </Button>
         </Link>
       </Box>
     </Box>

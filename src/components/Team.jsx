@@ -112,37 +112,6 @@ const teamMembers = [
 // Composant Card pour afficher un membre de l'équipe
 const TeamMemberCard = ({ member }) => {
   return (
-    // <>
-    //   <div class="ui card">
-    //     <div class="ui  right slide masked reveal image ">
-    //       <img
-    //         src={member.image}
-    //         class="visible content"
-    //         // style={{ height: "150px" }}
-    //       />
-    //       <img
-    //         src={member.image}
-    //         class="hidden content"
-    //         // style={{ height: "150px" }}
-    //       />
-    //     </div>
-    //     <div class="content">
-    //       <a class="header">{member.name}</a>
-    //       <div class="meta">
-    //         <span class="date">{member.position}</span>
-    //       </div>
-    //     </div>
-    //     <div class="extra content">
-    //       <a>
-    //         <i class="users icon"></i>
-    //         <TeamDrawer
-    //           name={member.name}
-    //           descriptionIndiv={member.descriptionIndiv}
-    //         />
-    //       </a>
-    //     </div>
-    //   </div>
-    // </>
     <Box
       h={200}
       maxW="sm"
@@ -150,14 +119,15 @@ const TeamMemberCard = ({ member }) => {
       borderRadius="lg"
       boxShadow={"md"}
       borderTop={"4px solid"}
-      borderColor={"#EEE4B1"}
-      _hover={{ bg: "#EEE4B1", transform: "scale(1.02)" }}
+      borderColor="#5F374B"
+      _hover={{ transform: "scale(1.02)" }} //bg: "#5F374B",
       overflow="hidden"
     >
       <Image
         position="revert-layer"
         p={1}
         borderRadius={10}
+        // _hover={{ transform: "scale(1.02)" }}
         src={member.image}
         alt={member.name}
       />
@@ -191,7 +161,6 @@ const TeamSection = () => {
       // borderTop={"4px solid"}
       borderRadius={8}
       p={6}
-      // borderColor={"#EEE4B1"}
     >
       <Box m={2}>
         <Heading textAlign="center" as="h2" size="xl" mb="8">

@@ -17,7 +17,10 @@ const teamDescriptions = [
 // Composant pour afficher la description d'une équipe avec animation
 const EquipeCreaCelluleDescription = ({ title, description, imgUrl }) => {
   return (
-    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <motion.div
+      whileHover={{ bg: "#EEE4B1", scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
       <Box
         p={6}
         borderRadius="lg"

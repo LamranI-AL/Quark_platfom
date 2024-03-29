@@ -1,14 +1,27 @@
-import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
+
+import {
+  Box,
+  Button,
+  Flex,
+  Spacer,
+  Text,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
-import { TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
+import {
+  MdOutlineEventNote,
+  MdOutlineContactPhone,
+  MdMenu,
+} from "react-icons/md";
+import { TbHomeInfinity, TbListDetails } from "react-icons/tb";
 import { SiCloudfoundry, SiGmail } from "react-icons/si";
-import { TbListDetails } from "react-icons/tb";
-import { MdOutlineContactPhone } from "react-icons/md";
-import { TbHomeInfinity } from "react-icons/tb";
-import "./Css/reseauxSocieaux.css";
-import { MdOutlineEventNote } from "react-icons/md";
+import { TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
+import { SlSocialFacebook } from "react-icons/sl";
 import {
   SignInButton,
   SignedIn,
@@ -16,8 +29,8 @@ import {
   UserButton,
   useUser,
 } from "@clerk/clerk-react";
-import SkeletonAvatar from "antd/es/skeleton/Avatar";
 import { useEffect, useState } from "react";
+import "./Css/reseauxSocieaux.css";
 
 const NavBar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -37,6 +50,7 @@ const NavBar = () => {
   }, []);
 
   const { isSignedIn, user, isLoaded } = useUser();
+
   return (
     <div>
       <Flex pl={2}>
@@ -83,13 +97,66 @@ const NavBar = () => {
           </Box>
         </Flex>
       </Flex>
+      <Spacer />
+      <Flex justifyContent="flex-end" mx={2}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<MdMenu />}
+            display={{ base: "flex", md: "none" }} // Show only in small screens
+          />
+          <MenuList>
+            <MenuItem>
+              <Flex alignItems="center">
+                <Box pl={5} m={1}>
+                  <TbHomeInfinity />
+                </Box>
+                <Link to={"/"}>Accueil</Link>
+              </Flex>
+            </MenuItem>
+            <MenuItem>
+              <Flex alignItems="center">
+                <Box pl={5} m={1}>
+                  <TbListDetails />
+                </Box>
+                <Link to={"/details"}>Détails</Link>
+              </Flex>
+            </MenuItem>
+            <MenuItem>
+              <Flex alignItems="center">
+                <Box pl={5} m={1}>
+                  <MdOutlineEventNote />
+                </Box>
+                <Link to={"/Events"}>Événements</Link>
+              </Flex>
+            </MenuItem>
+            <MenuItem>
+              <Flex alignItems="center">
+                <Box pl={5} m={1}>
+                  <MdOutlineContactPhone />
+                </Box>
+                <Link to={"/contact"}>Contactez-nous</Link>
+              </Flex>
+            </MenuItem>
+            <MenuItem>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      </Flex>
+
+      {/* Desktop Menu */}
+      {/* <Flex display={{ base: "none", md: "flex" }} alignItems="center"> */}
       <Flex
         position={isSticky ? "fixed" : "relative"}
         bg={isSticky ? "#fff" : "transparent"}
+        display={{ base: "none", md: "flex" }}
         top="0"
         left="0"
         right="0"
-        // bg="#5F374B"
         p="4"
         alignItems="center"
         zIndex="1000"

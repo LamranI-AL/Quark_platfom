@@ -5,6 +5,7 @@ import { Box, Center } from "@chakra-ui/react";
 import Event from "../components/Event";
 import EventsSectionForHome from "../components/EventForHome";
 import Footer from "../components/Footer";
+import QrCard from "../components/QrCard";
 
 const Homme = () => {
   return (
@@ -23,6 +24,10 @@ const Homme = () => {
 
       <section>
         <TeamSection />
+      </section>
+
+      <section>
+        <QrCard />
       </section>
 
       <section>
