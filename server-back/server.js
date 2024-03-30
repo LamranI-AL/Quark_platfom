@@ -20,7 +20,7 @@ const password = process.env.PASSWORD;
 // const password = "lamraniotman000";
 const database = "QuarkDb";
 mongoose.connect(
-  `mongodb+srv://${userName}:${password}@quark.yu70cdd.mongodb.net/${database}?retryWrites=true&w=majority`
+  `mongodb+srv://${userName}:lamraniotman000@quark.yu70cdd.mongodb.net/${database}?retryWrites=true&w=majority`
 );
 
 //get les message et lea utulisateur men db
