@@ -22,8 +22,12 @@ const database = "QuarkDb";
 mongoose.connect(
   `mongodb+srv://${userName}:lamraniotman000@quark.yu70cdd.mongodb.net/${database}?retryWrites=true&w=majority`
 );
-
+app.get("/", async (req, res) => {
+  const message = "hello";
+  res.json(message);
+});
 //get les message et lea utulisateur men db
+
 app.get("/message", async (req, res) => {
   const message = await MessageModel.find();
   res.json(message);
