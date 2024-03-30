@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "env-cmd -f dev.env nodemon server.js",
-    "build": "jsc",
+    "build": "Node build --output public",
     "vercel-build": "echo hello"
   },
   "keywords": [],

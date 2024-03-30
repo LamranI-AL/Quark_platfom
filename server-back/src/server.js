@@ -1,11 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const MessageModel = require("../server-back/Model/MessageModel");
+const MessageModel = require("./Model/MessageModel");
 const cors = require("cors");
 const EventModel = require("./Model/EventModel");
 
 // creat server
-export const app = express();
+const app = express();
 
 // donner acces a port 5173
 app.use(
