@@ -7,7 +7,7 @@ import { Empty } from "antd";
 function EventsSection() {
   const [eventts, setEventts] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:3001/event").then((res) => {
+    Axios.get("https://quark-api.onrender.com/event").then((res) => {
       setEventts(res.data);
     });
   }, []);

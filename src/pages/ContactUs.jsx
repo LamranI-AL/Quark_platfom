@@ -30,7 +30,7 @@ import Footer from "../components/Footer";
 const ContactUs = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:3001/message").then((res) => {
+    Axios.get("https://quark-api.onrender.com/message").then((res) => {
       setUsers(res.data);
     });
   }, [users]);
