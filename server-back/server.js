@@ -5,7 +5,7 @@ const cors = require("cors");
 const EventModel = require("./Model/EventModel");
 
 // creat server
-const app = express();
+export const app = express();
 
 // donner acces a port 5173
 app.use(
