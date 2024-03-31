@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const MessageModel = require("./Model/MessageModel");
+const MessageModel = require("../api/Model/MessageModel");
 const cors = require("cors");
-const EventModel = require("./Model/EventModel");
+const EventModel = require("../api/Model/EventModel");
 
 // creat server
 const app = express();
@@ -48,3 +48,5 @@ app.post("/CreatMessage", async (req, res) => {
 app.listen("3001", () => {
   console.log(" Server is running on port 3001");
 });
+X;
+module.exports = app;

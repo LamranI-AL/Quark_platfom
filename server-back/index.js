@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const MessageModel = require("../src/Model/MessageModel");
+const MessageModel = require("./Model/MessageModel");
 const cors = require("cors");
-const EventModel = require("../src/Model/EventModel");
+const EventModel = require("./Model/EventModel");
 
 // creat server
 const app = express();
@@ -17,6 +17,7 @@ app.use(express.json()); // pour parser les données envoyées dans le body
 // CONNECT TO DB
 const userName = "lamraniotman";
 const password = process.env.PASSWORD;
+// const password = "lamraniotman000";
 const database = "QuarkDb";
 mongoose.connect(
   `mongodb+srv://${userName}:lamraniotman000@quark.yu70cdd.mongodb.net/${database}?retryWrites=true&w=majority`
@@ -47,3 +48,4 @@ app.post("/CreatMessage", async (req, res) => {
 app.listen("3001", () => {
   console.log(" Server is running on port 3001");
 });
+module.exports = app;
