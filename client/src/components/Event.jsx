@@ -17,7 +17,7 @@ function EventsSection() {
       <Heading p={5} textAlign={"center"} mb={10}>
         Evenements
       </Heading>
-      <SimpleGrid columns={{ base: 2, sm: 3, lg: 4 }}>
+      <SimpleGrid columns={{ base: 2, sm: 3, lg: 4 }} spacing={2}>
         {eventts.length > 0 ? (
           eventts.map((event) => (
             <Box mt={4}>

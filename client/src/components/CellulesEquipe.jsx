@@ -61,12 +61,22 @@ const CellulesEquipe = () => {
     "L'Équipe de Recherche Scientifique du Club Quark incarne l'esprit de découverte et d'exploration qui anime notre institution d'ingénierie. Notre équipe se consacre à la recherche scientifique de pointe, à l'innovation et à la quête de nouvelles connaissances.";
   const description =
     "Une cellule de recherche scientifique est une unité spécialisée qui se consacre à l'exploration et à la compréhension de phénomènes, de concepts ou de problématiques spécifiques par le biais de la méthode scientifique. Ses objectifs fondamentaux sont les suivants : Découverte de connaissances : La cellule de recherche scientifique a pour mission de contribuer à l'expansion des connaissances en explorant des domaines particuliers de la science la résolution de problèmes, l'amélioration des technologies ou la promotion du bien-être humain. Diffusion des résultats : La diffusion des résultats de la recherche est un objectif essentiel";
-
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.4 },
+    },
+  };
   return (
     <motion.div
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: "0%", opacity: 1 }}
-      transition={{ duration: 1.1 }}
+      // initial={{ x: "100%", opacity: 0 }}
+      // animate={{ x: "0%", opacity: 1 }}
+      // transition={{ duration: 1.1 }}
+      initial="initial"
+      variants={variants}
+      whileInView="inView"
     >
       <Box m={5} p={10}>
         <Heading

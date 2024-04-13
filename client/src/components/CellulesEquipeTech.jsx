@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  SimpleGrid,
-  Image,
-  Flex,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, SimpleGrid, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ModelTasck from "./ModelTasck";
 import imgProgramation from "../assets/imges/cellulProgramming.png";
@@ -65,15 +57,26 @@ const EquipeCelluleDescription = ({ title, description, imgUrl }) => {
 
 // Composant Section pour afficher les descriptions des équipes avec animation
 const CellulesEquipeTech = () => {
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.4 },
+    },
+  };
   const decriptionEquipe =
     "une équipe de plus de 70 personnes qui vise a former les adhérents du club dans plusieurs domaines qui ont une relation avec la technlogie. l'équipe se compose de trois cellules. chacune de ces cellules traite des sujets indépendants et travaille sur plusieurs projets.";
   const description =
     "&Le marketing englobe un ensemble de stratégies et d'activités visant à promouvoir un produit, un service, une marque ou une entreprise. Ses objectifs principaux sont les suivants : Sensibilisation : Le marketing vise à accroître la notoriété d'un produit, d'une entreprise ou d'une marque auprès du public cible Rentabilité : Le marketing vise à générer des revenus et des profits Acquisition de clients : Le marketing cherche à attirer de nouveaux clients ou à fidéliser les clients existants || la cellule de programmation a fixé plusieurs objectifs sous forme des mini projets pour mettre en évidence tout ce qui a été appris durant les formations et les ateliers. Création d'un jeu astronomique sous le nom Quark, Création d'un similateur e-commerce, Création d'un robot, Création du site web.";
   return (
     <motion.div
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: "0%", opacity: 1 }}
-      transition={{ duration: 1.1 }}
+      // initial={{ x: "100%", opacity: 0 }}
+      // animate={{ x: "0%", opacity: 1 }}
+      // transition={{ duration: 1.1 }}
+      initial="initial"
+      variants={variants}
+      whileInView="inView"
     >
       <Box m={5} p={10}>
         <Heading

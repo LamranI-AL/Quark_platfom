@@ -10,7 +10,7 @@ const Footer = () => {
       transition={{ duration: 1 }}
     >
       <SimpleGrid
-        color={"black"}
+        color="black"
         bg="#5F374B"
         pl={3}
         columns={{ base: 1, md: 3, lg: 3 }}

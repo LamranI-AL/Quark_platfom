@@ -42,15 +42,26 @@ const EquipeCreaCelluleDescription = ({ title, description, imgUrl }) => {
 
 // Composant Section pour afficher les descriptions des équipes avec animation
 const CellulesEquipeCreatititi = () => {
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.4 },
+    },
+  };
   const decriptionEquipe =
     "Notre Équipe de Créativité est le cœur battant du Club Quark. Notre mission est claire : stimuler l'innovation et la créativité sous toutes ses formes. Composée d'étudiants passionnés et ingénieux, notre équipe travaille en étroite collaboration pour concevoir et donner vie à des idées novatrices. Nous organisons des ateliers inspirants, des sessions de brainstorming, des projets collaboratifs et des événements qui incitent à la réflexion créative";
   const description =
     "En règle générale: Nous sommes un collectif de talents variés, tous unis par une passion commune pour la créativité. En travaillant ensemble: nous repoussons les limites de créativité, nous embrassons la diversité des idées, nous créons des projets exceptionnels.";
   return (
     <motion.div
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: "0%", opacity: 1 }}
-      transition={{ duration: 1.1 }}
+      // initial={{ x: "100%", opacity: 0 }}
+      // animate={{ x: "0%", opacity: 1 }}
+      // transition={{ duration: 1.1 }}
+      initial="initial"
+      variants={variants}
+      whileInView="inView"
     >
       <Box m={5} p={10}>
         <Heading

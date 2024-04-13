@@ -63,11 +63,22 @@ const TeamDescription = ({ title, description, imgUrl }) => {
 
 // Composant Section pour afficher les descriptions des équipes
 const TeamDescriptionSection = () => {
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.4 },
+    },
+  };
   return (
     <motion.div
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: "0%", opacity: 1 }}
-      transition={{ duration: 1.1 }}
+      // initial={{ x: "100%", opacity: 0 }}
+      // animate={{ x: "0%", opacity: 1 }}
+      // transition={{ duration: 1.1 }}
+      initial="initial"
+      variants={variants}
+      whileInView="inView"
     >
       <Box
         m={2}

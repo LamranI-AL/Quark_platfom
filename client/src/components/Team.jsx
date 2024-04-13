@@ -15,6 +15,7 @@ import arwaImage from "../assets/bureau/arwaImage.jpeg";
 import abdlHakimImage from "../assets/bureau/abdlHakimImage.jpg";
 import youssefImage from "../assets/bureau/youssefImage.jpg";
 import aymaneImage from "../assets/bureau/aymaneImage.jpg";
+import { motion } from "framer-motion";
 
 // Exemple de données de membres de l'équipe
 const teamMembers = [
@@ -154,33 +155,43 @@ const TeamMemberCard = ({ member }) => {
 
 // Composant Section pour afficher les membres de l'équipe
 const TeamSection = () => {
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.4 },
+    },
+  };
   return (
-    <Box
-      m={1}
-      mt={20}
-      // borderTop={"4px solid"}
-      borderRadius={8}
-      p={6}
-    >
-      <Box m={2}>
-        <Heading textAlign="center" as="h2" size="xl" mb="8">
-          Members de bureau
-        </Heading>
-        <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 8 }} spacing={3}>
-          {teamMembers.map((member) => (
-            <Box>
-              <TeamMemberCard key={member.id} member={member} />
-              <Box m={5}>
-                <TeamDrawer
-                  name={member.name}
-                  descriptionIndiv={member.descriptionIndiv}
-                />
+    <motion.div initial="initial" variants={variants} whileInView="inView">
+      <Box
+        m={1}
+        mt={20}
+        // borderTop={"4px solid"}
+        borderRadius={8}
+        p={6}
+      >
+        <Box m={2}>
+          <Heading textAlign="center" as="h2" size="xl" mb="8">
+            Members de bureau
+          </Heading>
+          <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 8 }} spacing={3}>
+            {teamMembers.map((member) => (
+              <Box>
+                <TeamMemberCard key={member.id} member={member} />
+                <Box m={5}>
+                  <TeamDrawer
+                    name={member.name}
+                    descriptionIndiv={member.descriptionIndiv}
+                  />
+                </Box>
               </Box>
-            </Box>
-          ))}
-        </SimpleGrid>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 

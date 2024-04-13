@@ -1,34 +1,38 @@
-import { Card } from "antd";
 import ModelTasck from "./ModelTasck";
-import { Box, Image } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 
-const EventGride = ({ imageUrl, name, description }) => {
-  const { Meta } = Card;
+const EventGride = ({ name, description }) => {
+  // const { Meta } = Card;
   return (
     <>
-      <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={
-          <a
-            href="https://www.linkedin.com/company/quark-ensabm"
-            target="_blank"
-          >
-            <Image height={270} w={300} alt={name} src={imageUrl} />
-          </a>
-        }
-      >
-        <Box mb={5}>
-          <a href="https://www.instagram.com/quark.ensabm/" target="_blank">
-            <Meta title={name} description="www.instagram.com/quark.ensabm" />
-          </a>
-        </Box>
-
-        <ModelTasck
-          title={name}
-          buttonName={"détaille"}
-          description={description}
-        />
+      <Card p={6} boxShadow={"xl"}>
+        <CardHeader my={5}>
+          <Heading size="md" color="#430A5D">
+            {" "}
+            {name}{" "}
+          </Heading>
+        </CardHeader>
+        <CardBody>
+          <Text color="#430A5D">
+            <a href="http://www.instagram.com/quark.ensabm." target="_blank">
+              www.instagram.com/quark.ensabm.
+            </a>
+          </Text>
+        </CardBody>
+        <CardFooter my={3}>
+          <ModelTasck
+            title={name}
+            buttonName={"détaille"}
+            description={description}
+          />
+        </CardFooter>
       </Card>
     </>
   );
