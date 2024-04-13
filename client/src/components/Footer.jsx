@@ -1,5 +1,4 @@
-import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import { Button, Flex, QRCode } from "antd";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const Footer = () => {

@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 
 const EventGride = ({ name, description }) => {
-  // const { Meta } = Card;
   return (
     <>
       <Card p={6} boxShadow={"xl"}>
